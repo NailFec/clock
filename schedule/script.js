@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let elapsedTime = 0;
     let timerInterval;
     let isRunning = false;
-    let currentView = null; // 'time' or 'countdown'
+    let currentView = null; // 'time' or 'countdown' or 'stopwatch'
 
     initializePage();
 
