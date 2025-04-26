@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>schedule | NailFec Clock</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+<div id="top-section">
+    <div id="nav-buttons">
+        <button class="nav-button" id="time-button">Time</button>
+        <button class="nav-button" id="countdown-button">Countdown</button>
+        <button class="nav-button" id="stopwatch-button">Stopwatch</button>
+    </div>
+    <div id="embedded-view"></div>
+</div>
+
+<div id="middle-section">
+    <div id="task-input-container">
+        <input id="task-name" placeholder="Task name" type="text">
+        <select id="task-type">
+            <option value="study">Study</option>
+            <option value="relax">Relax</option>
+        </select>
+        <button class="control-button" id="start-button">Start</button>
+    </div>
+    <div class="hidden" id="timer-container">
+        <div id="timer-display">00:00</div>
+        <div id="task-info">
+            <div id="task-info-text">
+                <div id="current-task-name"></div>
+                <div id="current-task-type"></div>
+            </div>
+            <button class="control-button" id="end-button">End</button>
+        </div>
+    </div>
+</div>
+
+<div id="bottom-section">
+    <div id="timeline-container">
+        <div id="timeline-hours">
+            <div class="hour-marker">0</div>
+            <div class="hour-marker">6</div>
+            <div class="hour-marker">12</div>
+            <div class="hour-marker">18</div>
+            <div class="hour-marker">24</div>
+        </div>
+        <div id="timeline"></div>
+    </div>
+    <button id="clear-button">Clear</button>
+    <button id="export-button">Export</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
