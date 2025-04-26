@@ -60,8 +60,14 @@
   - 不同休息任务的时间占比（按任务名称分类）
 - 最下方按照任务名称分类，分别列出每一个学习任务和休息任务的详细记录，包括日期、时间和持续时长。
 
+![analysis.png](.repository/analysis.png)
+
 ## overall
 
 *detail*: 主题统一，特殊颜色（如橙色、红色）在不同页面也统一。整体为黑色背景模式，利于屏幕持续显示时间。  
 *detail*: 基于全屏网页设计，对于不同大小尺寸的屏幕都能够适应。  
 *detail*: 兼容不同浏览器和内核，专门针对 Chrome、Safari、Firefox 特殊开发，并在 Chrome、Safari、Firefox、Edge、Opera、IE 中进行了测试。
+
+## repository
+
+Under the [MIT license](LICENSE). (c) 2025 NailFec
