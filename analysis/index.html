@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>analysis | NailFec Clock</title>
+    <link href="style.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
+</head>
+<body>
+<div id="main-container">
+    <div id="import-section">
+        <h1>Schedule Analysis</h1>
+        <div id="import-container">
+            <label class="import-button" for="file-input">Import YAML Files</label>
+            <input accept=".yaml,.yml" id="file-input" multiple style="display: none;" type="file">
+        </div>
+    </div>
+
+    <div id="timeline-section">
+        <h2>Daily Timeline</h2>
+        <div id="timeline-container"></div>
+    </div>
+
+    <div id="daily-stats-section">
+        <h2>Daily Statistics</h2>
+        <div id="daily-stats-container">
+            <canvas id="daily-stats-chart"></canvas>
+        </div>
+    </div>
+
+    <div id="charts-section">
+        <h2>Analysis Charts</h2>
+        <div id="charts-container">
+            <div class="chart-wrapper">
+                <h3>Study vs Rest</h3>
+                <canvas id="study-rest-chart"></canvas>
+            </div>
+            <div class="chart-wrapper">
+                <h3>Study Tasks</h3>
+                <canvas id="study-tasks-chart"></canvas>
+            </div>
+            <div class="chart-wrapper">
+                <h3>Rest Tasks</h3>
+                <canvas id="rest-tasks-chart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <div id="details-section">
+        <h2>Task Details</h2>
+        <div id="study-details">
+            <h3>Study Tasks</h3>
+            <div id="study-tasks-details"></div>
+        </div>
+        <div id="rest-details">
+            <h3>Rest Tasks</h3>
+            <div id="rest-tasks-details"></div>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

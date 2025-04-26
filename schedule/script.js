@@ -198,45 +198,58 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // 格式化时间为24小时制 (HH:MM:SS)
+    function format24HourTime(date) {
+        const hours = date.getHours().toString().padStart(2, '0');
+        const minutes = date.getMinutes().toString().padStart(2, '0');
+        const seconds = date.getSeconds().toString().padStart(2, '0');
+        return `${hours}:${minutes}:${seconds}`;
+    }
+    
     function exportSchedule() {
         if (tasks.length === 0 && !currentTask) {
-            alert('No tasks to export');
+            alert('无任务可导出');
             return;
         }
 
-        let exportData = 'Schedule Export\n\n';
-        exportData += 'Date: ' + new Date().toLocaleDateString() + '\n\n';
+        const currentDate = new Date();
 
+        let exportData = `---\n`;
+        exportData += `tasks:\n`;
+        
         if (currentTask) {
-            const startTime = new Date(currentTask.start).toLocaleTimeString();
-            exportData += `CURRENT TASK:\n`;
-            exportData += `Name: ${currentTask.name}\n`;
-            exportData += `Type: ${currentTask.type}\n`;
-            exportData += `Start Time: ${startTime}\n`;
-            exportData += `Status: In Progress\n\n`;
+            const startTime = format24HourTime(new Date(currentTask.start));
+            const taskDate = new Date(currentTask.start).toISOString().split('T')[0];
+
+            exportData += `- name: "${currentTask.name}"\n`;
+            exportData += `  type: "${currentTask.type}"\n`;
+            exportData += `  date: "${taskDate}"\n`;
+            exportData += `  start: "${startTime}"\n`;
+            exportData += `  status: "进行中"\n\n`;
         }
 
         if (tasks.length > 0) {
-            exportData += 'COMPLETED TASKS:\n';
-            tasks.forEach((task, index) => {
-                const startTime = new Date(task.start).toLocaleTimeString();
-                const endTime = new Date(task.end).toLocaleTimeString();
+            tasks.forEach((task) => {
+                const startTime = format24HourTime(new Date(task.start));
+                const endTime = format24HourTime(new Date(task.end));
                 const duration = formatDuration(task.duration);
+                const taskDate = new Date(task.start).toISOString().split('T')[0];
 
-                exportData += `${index + 1}. ${task.name}\n`;
-                exportData += `   Type: ${task.type}\n`;
-                exportData += `   Start: ${startTime}\n`;
-                exportData += `   End: ${endTime}\n`;
-                exportData += `   Duration: ${duration}\n\n`;
+                exportData += `- name: "${task.name}"\n`;
+                exportData += `  type: "${task.type}"\n`;
+                exportData += `  date: "${taskDate}"\n`;
+                exportData += `  start: "${startTime}"\n`;
+                exportData += `  end: "${endTime}"\n`;
+                exportData += `  duration: "${duration}"\n\n`;
             });
         }
 
-        const blob = new Blob([exportData], {type: 'text/plain'});
+        const blob = new Blob([exportData], {type: 'text/yaml'});
         const url = URL.createObjectURL(blob);
 
         const a = document.createElement('a');
         a.href = url;
-        a.download = 'schedule_export_' + new Date().toISOString().split('T')[0] + '.txt';
+        a.download = 'schedule_export_' + currentDate.toISOString().split('T')[0] + '.yaml';
         document.body.appendChild(a);
         a.click();
 
