@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
             isPaused = false;
 
             startButton.style.display = 'none';
-            stopButton.textContent = 'Stop';
+            stopButton.textContent = 'Pause';
             stopButton.style.display = 'inline-block';
             stopwatchDisplay.classList.remove('paused');
         }
@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
             stopwatchInterval = setInterval(updateStopwatch, 10);
             isPaused = false;
 
-            stopButton.textContent = 'Stop';
+            stopButton.textContent = 'Pause';
             stopwatchDisplay.classList.remove('paused');
         }
     }
@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         startButton.style.display = 'inline-block';
         stopButton.style.display = 'none';
-        stopButton.textContent = 'Stop';
+        stopButton.textContent = 'Pause';
     }
 
     stopButton.style.display = 'none';
