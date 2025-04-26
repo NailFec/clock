@@ -1,0 +1,55 @@
+* {
+    font-family: monospace;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: monospace;
+    background-color: #000;
+    color: #fff;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    user-select: none;
+}
+
+#stopwatch-display {
+    font-size: 10vw;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.milliseconds {
+    font-size: 5vw;
+    vertical-align: super;
+}
+
+#control-panel {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.control-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #555;
+    border-radius: 5px;
+    cursor: pointer;
+    min-width: 100px;
+    text-align: center;
+}
+
+.control-button:hover {
+    background-color: #444;
+}
+
+.paused {
+    color: #ffaa55;
+}

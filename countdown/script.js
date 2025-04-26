@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const countdownDisplay = document.getElementById('countdown-display');
     const estimatedEndTimeDisplay = document.getElementById('estimated-end-time');
-    const optionsPanel = document.getElementById('options-panel');
     const optionButtons = document.querySelectorAll('.option-button');
     const customMinutesInput = document.getElementById('custom-minutes');
     const customStartButton = document.getElementById('custom-start');
@@ -100,12 +99,6 @@ document.addEventListener('DOMContentLoaded', () => {
         updateCountdown();
 
         countdownInterval = setInterval(updateCountdown, 1000);
-    }
-
-    function requestNotificationPermission() {
-        if ('Notification' in window) {
-            Notification.requestPermission();
-        }
     }
 
     function sendNotification(title, body) {
