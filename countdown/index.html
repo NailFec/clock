@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>countdown | NailFec Clock</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+<div id="progress-bar"></div>
+<div id="estimated-end-time"></div>
+<div id="countdown-display"></div>
+
+<div id="options-panel">
+    <button class="option-button" data-minutes="10">10 min</button>
+    <button class="option-button" data-minutes="30">30 min</button>
+    <button class="option-button" data-minutes="45">45 min</button>
+    <button class="option-button" data-minutes="60">1 h</button>
+    <button class="option-button" data-minutes="120">2 h</button>
+    <div class="custom-input-container">
+        <input id="custom-minutes" max="1440" min="1" placeholder="1" type="number">
+        <span>min</span>
+        <button class="option-button" id="custom-start">Start</button>
+    </div>
+</div>
+
+<div class="notification" id="notification">please input a valid number to start</div>
+
+<div id="control-panel">
+    <button class="control-button" id="pause-button">Pause</button>
+    <button class="control-button" id="end-button">End</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

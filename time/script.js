@@ -25,8 +25,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         let period = '';
         if (!is24HourFormat) {
-            period = hours >= 12 ? ' PM' : ' AM';
-            period = ` <span class="period">${period}</span>`;
+            period = hours >= 12 ? 'PM' : 'AM';
+            period = `<span class="period">${period}</span>`;
             hours = hours % 12 || 12;
         }
 

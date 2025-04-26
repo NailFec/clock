@@ -1,3 +1,7 @@
+* {
+    font-family: monospace;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -23,6 +27,7 @@ body {
 }
 
 .period {
+    padding-left: 27px;
     font-size: 5vw;
 }
 
