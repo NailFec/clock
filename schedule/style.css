@@ -1,12 +1,12 @@
 * {
-    font-family: monospace;
+    font-family: "Google Sans Mono", "JetBrains Mono", monospace;
     box-sizing: border-box;
 }
 
 body {
     margin: 0;
     padding: 0;
-    font-family: monospace;
+    font-family: "Google Sans Mono", "JetBrains Mono", monospace;
     background-color: #000;
     color: #fff;
     display: flex;
